@@ -8,11 +8,16 @@ class App extends React.Component{
 		super(props);
 	}
 
+	clickHandler(){
+		this.props.testClick();
+	}
+
 	render() {
 		return(
 			<div>
 				<h1>Hello React-Redux-Express</h1>
 				<h2>Counter: {this.props.counter}</h2>
+				<button onClick={this.clickHandler.bind(this)} > Click me</button>
 			</div>
 		)
 	}

@@ -18315,6 +18315,11 @@ var App = function (_React$Component) {
 	}
 
 	_createClass(App, [{
+		key: 'clickHandler',
+		value: function clickHandler() {
+			this.props.testClick();
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
@@ -18330,6 +18335,11 @@ var App = function (_React$Component) {
 					null,
 					'Counter: ',
 					this.props.counter
+				),
+				_react2.default.createElement(
+					'button',
+					{ onClick: this.clickHandler.bind(this) },
+					' Click me'
 				)
 			);
 		}
@@ -21279,7 +21289,7 @@ function counterApp(state, action) {
 	}
 	switch (action.type) {
 		case "Add":
-			return Object.assign({}, state, { counter: counter + 1 });
+			return Object.assign({}, state, { counter: state.counter + 1 });
 		default:
 			return state;
 	}
